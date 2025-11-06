@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chấm công & Tính lương - HR Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/chamcong.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>HR Manager</h2>
+    <ul>
+      <li><a href="trangchu.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="nhanvien.html"><i class="fa-solid fa-users"></i> Nhân viên</a></li>
+      <li><a href="phongban.html"><i class="fa-solid fa-building"></i> Phòng ban</a></li>
+      <li class="active"><a href="#"><i class="fa-solid fa-clock"></i> Chấm công</a></li>
+      <li><a href="baocao.html"><i class="fa-solid fa-file-lines"></i> Báo cáo</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <header>
+      <h2><i class="fa-solid fa-clock"></i> Quản lý chấm công</h2>
+      <div class="user-info">
+          <img src="https://i.pravatar.cc/150?img=11" alt="Admin" />
+          <span><a style="text-decoration: none; color: white; background-color: #4169E1;
+border-radius: 6px;padding: 6px;" href="login.html" id="auth-link">Đăng nhập</a></span>
+        </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('chamcong')">Chấm công</button>
+      <button class="tab" onclick="showTab('luong')">Tính lương</button>
+    </div>
+    <section id="chamcong" class="content visible">
+      <div class="card">
+        <h3>Chấm công nhân viên</h3>
+        <form>
+          <label>Mã nhân viên:</label>
+          <input type="text" placeholder="Nhập mã nhân viên..." />
+          <label>Ngày làm việc:</label>
+          <input type="date" />
+          <label>Giờ vào:</label>
+          <input type="time" />
+          <label>Giờ ra:</label>
+          <input type="time" />
+          <label>Ghi chú:</label>
+          <textarea placeholder="Ghi chú (nếu có)..."></textarea>
+          <button type="submit">Lưu chấm công</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Danh sách chấm công</h3>
+        <input type="text" placeholder="Tìm kiếm nhân viên..." />
+        <table>
+          <thead>
+            <tr>
+              <th>Mã NV</th>
+              <th>Họ tên</th>
+              <th>Ngày</th>
+              <th>Giờ vào</th>
+              <th>Giờ ra</th>
+              <th>Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NV001</td>
+              <td>Mai Đức Hiệp</td>
+              <td>26/10/2025</td>
+              <td>08:00</td>
+              <td>17:00</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="luong" class="content">
+      <div class="card">
+        <h3>Tính lương nhân viên</h3>
+        <form>
+          <label>Mã nhân viên:</label>
+          <input type="text" placeholder="Nhập mã nhân viên..." />
+          <label>Số ngày làm việc:</label>
+          <input type="number" placeholder="Nhập số ngày làm việc..." />
+          <label>Lương cơ bản (VNĐ/ngày):</label>
+          <input type="number" placeholder="Nhập lương cơ bản..." />
+          <label>Thưởng (VNĐ):</label>
+          <input type="number" placeholder="Nhập tiền thưởng..." />
+          <label>Phạt (VNĐ):</label>
+          <input type="number" placeholder="Nhập tiền phạt..." />
+          <button type="button" onclick="tinhLuong()">Tính lương</button>
+        </form>
+        <div id="ketqua"></div>
+      </div>
+
+      <div class="card">
+        <h3>Bảng lương</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Mã NV</th>
+              <th>Họ tên</th>
+              <th>Số ngày</th>
+              <th>Thưởng</th>
+              <th>Phạt</th>
+              <th>Tổng lương (VNĐ)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NV001</td>
+              <td>Mai Đức Hiệp</td>
+              <td>26</td>
+              <td>500,000</td>
+              <td>0</td>
+              <td>13,000,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  
+
+  <script src="/js/chamcong.js"></script>
+  <script src="/js/auth.js" defer></script>
+</body>
+</html>

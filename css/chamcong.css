@@ -1,0 +1,259 @@
+/* ==== RESET ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  background: #f3f6fd;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #47bcb7, #7cc6c2);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  transition: all 0.3s;
+}
+.sidebar a{
+text-decoration: none;
+color:white;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.sidebar ul li i {
+  margin-right: 10px;
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+/* ==== HEADER (Chỉnh sửa để tách user-info và header) ==== */
+/* Style cho thanh header chính */
+header {
+background: #fff;
+  box-shadow: none;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+  z-index: 10;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Style cho thanh user-info (cố định trên cùng) */
+.main-content > .user-info {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333; 
+}
+header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Ẩn Dark Toggle vì đã bỏ Dark Mode */
+#darkToggle {
+  display: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* ==== TABS ==== */
+.tabs {
+  margin: 0 30px;
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+.tab {
+  padding: 12px 25px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+.tab:hover {
+  color: #47bcb7;
+}
+.tab.active {
+  color: #47bcb7;
+  border-bottom: 3px solid #47bcb7;
+}
+
+/* ==== CONTENT & CARDS (Sử dụng phong cách cards và form nhất quán) ==== */
+.content {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+/* Ẩn nội dung tab không được chọn */
+.content:not(.visible) {
+    display: none;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-left: 4px solid #47bcb7;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+/* ==== FORM ELEMENTS ==== */
+form label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+form input[type="text"],
+form input[type="date"],
+form input[type="time"],
+form input[type="number"],
+form select, /* Bổ sung cho trường Tính lương */
+form textarea,
+.card > input[type="text"] { /* Dùng cho input tìm kiếm */
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  margin-bottom: 10px; /* Thêm margin dưới cho input */
+}
+form input:focus,
+form select:focus,
+form textarea:focus,
+.card > input[type="text"]:focus {
+  outline: none;
+  border-color: #47bcb7;
+}
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button */
+form button[type="submit"],
+form button[type="button"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  background: #47bcb7;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+form button:hover {
+  background: #3da39f;
+}
+
+#ketqua {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #47bcb7;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+    background: #e0f7f6;
+}
+
+/* ==== TABLE STYLE ==== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+th {
+  background: #47bcb7;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+tbody tr:hover {
+  background: #f9f9f9;
+}

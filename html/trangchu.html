@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Quản lý nhân viên</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/trangchu.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>HR Manager</h2>
+      <ul>
+      <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="nhanvien.html"><i class="fa-solid fa-users"></i> Nhân viên</a></li>
+      <li><a href="phongban.html"><i class="fa-solid fa-building"></i> Phòng ban</a></li>
+      <li><a href="chamcong.html"><i class="fa-solid fa-clock"></i> Chấm công</a></li>
+      <li><a href="baocao.html"><i class="fa-solid fa-file-lines"></i> Báo cáo</a></li>
+      </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+      <header>
+        <h2>📊 Bảng điều khiển nhân sự</h2>
+        <div class="user-info">
+          <img src="https://i.pravatar.cc/150?img=11" alt="Admin" />
+          <span><a style="text-decoration: none; color: white; background-color: #4169E1;
+border-radius: 6px;padding: 6px;" href="login.html" id="auth-link">Đăng nhập</a></span>
+        </div>
+      </header>
+
+      <!-- CARDS -->
+      <section class="cards">
+        <div class="card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Tổng nhân viên</h3>
+          <p>125</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-building"></i>
+          <h3>Phòng ban</h3>
+          <p>5</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-user-plus"></i>
+          <h3>Nhân viên mới</h3>
+          <p>8</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-money-bill-trend-up"></i>
+          <h3>Tổng lương tháng</h3>
+          <p>120,000,000đ</p>
+        </div>
+      </section>
+
+      <!-- CHARTS -->
+      <section class="charts">
+        <div class="chart-box">
+          <h3>📈 Nhân viên theo phòng ban</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3>👫 Tỷ lệ giới tính</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+      </section>
+
+      <!-- TABLE -->
+      <section class="table-section">
+        <div class="table-header">
+          <h3>🗂️ Danh sách nhân viên mới</h3>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Tìm kiếm nhân viên..."
+          />
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Tên nhân viên</th>
+              <th>Phòng ban</th>
+              <th>Chức vụ</th>
+              <th>Ngày vào làm</th>
+            </tr>
+          </thead>
+          <tbody id="empTable"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- JS -->
+    <script src="/js/trangchu.js"></script>
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>

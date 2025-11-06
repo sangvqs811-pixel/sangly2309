@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý nhân viên</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/nhanvien.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar"> 
+      <h2>HR Manager</h2>
+      <ul><li><a href="trangchu.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+      <li class="active"><a href="#"><i class="fa-solid fa-users"></i> Nhân viên</a></li>
+      <li><a href="phongban.html"><i class="fa-solid fa-building"></i> Phòng ban</a></li>
+      <li><a href="chamcong.html"><i class="fa-solid fa-clock"></i> Chấm công</a></li>
+      <li><a href="baocao.html"><i class="fa-solid fa-file-lines"></i> Báo cáo</a></li>
+      </ul>
+    </div>
+    <!-- SIDEBAR -->
+
+    <!-- Main -->
+    <div class="main-content">
+      <header>
+        <h2> <i class="fa-solid fa-users"></i> Quản lý nhân sự</h2>
+        <div class="user-info">
+          <img src="https://i.pravatar.cc/150?img=11" alt="Admin" />
+          <span><a style="text-decoration: none; color: white; background-color: #4169E1;
+border-radius: 6px;padding: 6px;" href="login.html" id="auth-link">Đăng nhập</a></span>
+        </div>
+      </header>
+
+      <!-- END MAIN -->
+
+          <!-- CONTENT -->
+    <main class="nhanvien">
+        <div class="container">
+            <div class="page-header">
+                <h1>Quản lý nhân viên</h1>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="form-section">
+                    <h2 style="color: black;">Thông tin nhân viên</h2>
+                    <div id="notification" class="notification"></div>
+                    <form id="employeeForm">
+                        <div class="form-group">
+                            <label for="employeeId">Mã nhân viên</label>
+                            <input type="text" id="employeeId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Họ và tên</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Tuổi</label>
+                            <input type="number" id="age" min="18" max="65" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Giới tính</label>
+                            <select id="gender" required>
+                                <option value="">Chọn giới tính</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Phòng ban</label>
+                            <select id="department" required>
+                                <option value="">Chọn phòng ban</option>
+                                <option value="IT">IT</option>
+                                <option value="Kế toán">Kế toán</option>
+                                <option value="Nhân sự">Nhân sự</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Kinh doanh">Kinh doanh</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Chức vụ</label>
+                            <input type="text" id="position" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Lương (VND)</label>
+                            <input type="number" id="salary" min="0" required>
+                        </div>
+                        <div class="action-buttons">
+                            <button type="submit" class="btn btn-success">Thêm nhân viên</button>
+                            <button type="button" id="updateBtn" class="btn btn-primary" style="display: none;"> <i class="fa-solid fa-pen edit" data-index="${index}" style="cursor:pointer;"></i>
+        <i class="fa-solid fa-trash delete" data-index="${index}" style="cursor:pointer; margin-left:10px;"></i></button>
+                            <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;"> <i class="fa-solid fa-pen edit" data-index="${index}" style="cursor:pointer;"></i>
+        <i class="fa-solid fa-trash delete" data-index="${index}" style="cursor:pointer; margin-left:10px;"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="table-section">
+                    <h2 style="color: black;">Danh sách nhân viên</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm nhân viên...">
+                        <button id="searchBtn" class="btn btn-primary">Tìm kiếm</button>
+                    </div>
+                    <table id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Họ tên</th>
+                                <th>Tuổi</th>
+                                <th>Giới tính</th>
+                                <th>Phòng ban</th>
+                                <th>Chức vụ</th>
+                                <th>Lương</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeList">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/nhanvien.js"></script>
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>

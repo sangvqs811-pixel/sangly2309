@@ -1,0 +1,213 @@
+/* ==== RESET ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  background: #f3f6fd;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #47bcb7, #7cc6c2);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  transition: all 0.3s;
+}
+.sidebar a{
+text-decoration: none;
+color:white;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.sidebar ul li i {
+  margin-right: 10px;
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* ==== HEADER ADDITIONS ==== *
+
+/* ==== CONTAINER & FILTERS ==== */
+.container {
+  padding: 30px;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filters input,
+.filters select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+#searchInput {
+  flex-grow: 1; /* Cho phép ô tìm kiếm chiếm nhiều không gian hơn */
+  max-width: 400px;
+}
+
+#filterPhongBan,
+#filterChucVu {
+  width: 200px;
+  cursor: pointer;
+  /* Thêm mũi tên tùy chỉnh cho select */
+  appearance: none;
+  background: #fff url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center/10px;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #47bcb7;
+  outline: none;
+}
+
+/* ==== TABLE STYLES (DataTables) ==== */
+/* Style chung cho DataTables container */
+.dataTables_wrapper {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Bảng */
+#tableBaoCao {
+  width: 100% !important;
+  margin-bottom: 15px;
+  border-collapse: collapse;
+}
+
+#tableBaoCao thead th {
+  background-color: #f7f9fc;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 15px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+}
+
+#tableBaoCao tbody td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px solid #f3f6fd;
+}
+
+#tableBaoCao tbody tr:hover {
+  background-color: #fcfcfc;
+}
+
+/* Style cho footer của DataTables (Pagination, info) */
+.dataTables_info,
+.dataTables_paginate {
+  padding-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.dataTables_paginate .paginate_button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dataTables_paginate .paginate_button.current,
+.dataTables_paginate .paginate_button:hover {
+  background-color: #47bcb7;
+  color: #fff !important;
+  border-color: #47bcb7;
+}
+
+/* Style cho các nút Export (DataTables Buttons) */
+.dt-buttons button {
+  background-color: #47bcb7;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-right: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dt-buttons button:hover {
+  background-color: #399a95;
+}

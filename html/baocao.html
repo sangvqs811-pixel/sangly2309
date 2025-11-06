@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Quản lý nhân viên</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/baocao.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>HR Manager</h2>
+      <ul>
+      <li><a href="trangchu.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="nhanvien.html"><i class="fa-solid fa-users"></i> Nhân viên</a></li>
+      <li><a href="phongban.html"><i class="fa-solid fa-building"></i> Phòng ban</a></li>
+      <li><a href="chamcong.html"><i class="fa-solid fa-clock"></i> Chấm công</a></li>
+      <li class="active"><a href="#"><i class="fa-solid fa-file-lines"></i> Báo cáo</a></li>
+      </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+      <header>
+        <h2><i class="fa-solid fa-file-lines"></i> Báo cáo</h2>
+        <div class="user-info">
+          <img src="https://i.pravatar.cc/150?img=11" alt="Admin" />
+          <span><a style="text-decoration: none; color: white; background-color: #4169E1;
+border-radius: 6px;padding: 6px;" href="login.html" id="auth-link">Đăng nhập</a></span>
+        </div>
+      </header>
+
+      <div class="container">
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder=" Tìm kiếm nhân viên...">
+        <select id="filterPhongBan">
+          <option value="">Lọc theo phòng ban</option>
+          <option value="IT">IT</option>
+          <option value="Kế Toán">Kế Toán</option>
+          <option value="Nhân Sự">Nhân Sự</option>
+        </select>
+        <select id="filterChucVu">
+          <option value="">Lọc theo chức vụ</option>
+          <option value="Nhân Viên">Nhân Viên</option>
+          <option value="Trưởng Phòng">Trưởng Phòng</option>
+        </select>
+      </div>
+
+      <table id="tableBaoCao" class="display nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <th>Mã NV</th>
+            <th>Họ Tên</th>
+            <th>Phòng Ban</th>
+            <th>Chức Vụ</th>
+            <th>Tuổi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>NV01</td><td>Nguyễn Văn A</td><td>IT</td><td>Nhân Viên</td><td>25</td></tr>
+          <tr><td>NV02</td><td>Trần Thị B</td><td>Kế Toán</td><td>Trưởng Phòng</td><td>29</td></tr>
+          <tr><td>NV03</td><td>Lê Thị C</td><td>Nhân Sự</td><td>Nhân Viên</td><td>27</td></tr>
+          <tr><td>NV04</td><td>Bùi Văn D</td><td>IT</td><td>Nhân Viên</td><td>30</td></tr>
+          <tr><td>NV05</td><td>Phạm Thị E</td><td>Kế Toán</td><td>Trưởng Phòng</td><td>31</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+  <script src="/js/auth.js" defer></script>
+
+  <script src="/js/baocao.js"></script>
+  </body>
+</html>
