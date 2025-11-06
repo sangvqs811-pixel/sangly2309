@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('username', username);
 
             // Chuyển hướng đến trang chủ
-            window.location.href = 'trangchu.html';
+            window.location.href = 'index.html';
         } else {
             // Đăng nhập thất bại
             alert('Tên đăng nhập hoặc mật khẩu không chính xác!');
