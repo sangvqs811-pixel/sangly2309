@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Nếu người dùng đã đăng nhập, tự động chuyển đến trang chủ
     if (sessionStorage.getItem('isLoggedIn') === 'true') {
-        window.location.href = 'trangchu.html';
+        window.location.href = 'index.html';
     }
 
     const loginForm = document.querySelector('.login-box form');
